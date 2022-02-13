@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- CSRF Token -->
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<!-- scripts -->
-    <title>@yield('title') | {{ config('app.name', 'Larabel') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
 <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
