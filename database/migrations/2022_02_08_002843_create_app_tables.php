@@ -40,11 +40,15 @@ class CreateAppTables extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('seller_id');
-            $table->unsignedBigInteger('buyer_id');
+            $table->unsignedBigInteger('buyer_id')->nullable();
             $table->unsignedBigInteger('secondary_category_id');
             $table->unsignedBigInteger('item_condition_id');
 
-             // ここにカラムを追加していく
+            $table->string('name');
+            $table->string('image_file_name');
+            $table->text('description');
+            $table->unsignedInteger('price');
+            $table->string('state');
 
             $table->timestamps();
 
@@ -64,7 +68,7 @@ class CreateAppTables extends Migration
     {
         Schema::dropIfExists('items');
         Schema::dropIfExists('item_conditions');
-        Schema::dropIfExists('primary_categories');
         Schema::dropIfExists('secondary_categories');
+        Schema::dropIfExists('primary_categories');
     }
 }

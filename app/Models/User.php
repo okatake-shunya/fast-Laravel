@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 1対多のリレーションを定義
+    // 第二引数には多側のキー(外部キー)であるseller_idを指定しています。
+
+    public function soldItems()
+    {
+        return $this->hasMany(Item::class, 'seller_id');
+    }
 }
