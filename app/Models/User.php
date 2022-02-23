@@ -38,10 +38,15 @@ class User extends Authenticatable
     ];
 
     // 1対多のリレーションを定義
-    // 第二引数には多側のキー(外部キー)であるseller_idを指定しています。
+    // 第二引数には多側のキー(外部キー)であるseller_idを指定
 
     public function soldItems()
     {
         return $this->hasMany(Item::class, 'seller_id');
+    }
+
+    public function boughtItems()
+    {
+        return $this->hasMany(Item::class, 'buyer_id');
     }
 }
